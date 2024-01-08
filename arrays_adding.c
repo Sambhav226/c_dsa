@@ -24,6 +24,6 @@ int main(){
     size++;
 
     for(i = 0; i < size; i++){
-        prinf("%d")
+        printf("%d\n",a[i]);
     }
 }
