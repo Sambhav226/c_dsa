@@ -7,8 +7,6 @@ struct node {
     struct node *next;
 };
 
-struct node *temp;
-
 struct node * creating_linkedlist(){
 
     struct node *head, *new_node, *temp; 
@@ -42,67 +40,21 @@ void view_linkedlist(struct node *head){
         temp = temp->next;
     }
 }
-
-// Function to delete from begning
-struct node *delete_from_begning(struct node *head){
-
-    if ( head == 0){
-        printf("Head is empty");
+void linkedlist_count(struct node *head){
+    if(head == 0){
+        printf("Empty head pointer");
     }
+
     else{
-    temp = head;
-    head = head->next;
-    free(temp);
-    }
-    return head;
-}
-
-// Function to delete from end
-struct node *delete_from_end(struct node *head){
-
-    if ( head == 0){
-        printf("Head is empty");
-    }
-    else{
-        struct node *prevnode;
+        struct node *temp;
+        int count = 0;
         temp = head;
-
-        while(temp->next!=0){
-            prevnode = temp;
+        while (temp!=0){
             temp = temp->next;
-
-            if(temp == head){
-                head = 0;
-            }
-            else{
-                prevnode->next = 0;
-            }
-            free(temp);
+            count ++;
         }
+        printf("Length is %d", count);
     }
-    return head;
-
-}
-
-// Funciton to delete from any position
-struct node *delete_from_position(struct node *head, int pos){
-    if ( head == 0){
-        printf("Head is empty");
-    }
-    else{
-        struct node * nextnode;
-
-        int i = 0;
-        while(i < pos-1){
-            temp = temp->next;
-            i++;
-        }
-        
-        nextnode = temp->next;
-        temp->next = nextnode->next;
-        free(nextnode);
-    }
-    return head;
 }
 
 int main() {

@@ -35,6 +35,7 @@ int main(){
         }
         else{
             head->next = new_node;
+            temp = new_node;
         }
         printf("Do you want to continue, If yes Type -> 0 : Else Type -> 1");
         scanf("%d", &choice);

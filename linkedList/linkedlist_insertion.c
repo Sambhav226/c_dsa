@@ -24,11 +24,21 @@ struct node * creating_linkedlist(){
         }
         else{
             head->next = new_node;
+            temp = new_node; // Update temp to the new node
         }
         printf("Do you want to continue, If yes Type -> 0 : Else Type -> 1");
         scanf("%d", &choice);
     }
     return head;
+}
+
+void view_linkedlist(struct node *head){
+    struct node *temp;
+    temp = head;
+    while( temp != 0){
+        printf("%d", temp->data);
+        temp = temp->next;
+    }
 }
 
 
@@ -110,8 +120,8 @@ struct node* insert_at_position(struct node *head, int pos, int value) {
 
 
 int main() {
-    // Call your linked list creation function
+    // Call the linked list creation function
     struct node *head = creating_linkedlist();
 
-    return 0; // Indicate successful execution
+    return 0; 
 }
