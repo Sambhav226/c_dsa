@@ -11,19 +11,21 @@ int main(){
         scanf("%d", &a[i]);
     }
 
-    printf("Enter data you want to insert");
-    scanf("%d", &num);
-
-    printf("Enter Position");
+    printf("Position from where to delete the data:");
     scanf("%d", &pos);
 
-    for(i = size-1; i >= pos-1; i--){
-        a[i+1] = a[i];
+    if(pos <= 0 || pos > size){
+        printf("invalid position");
     }
-    a[pos-1] = num;
-    size++;
+    else{
+        for(i = pos-1; i < size-1; i++){
+            a[i] = a[i+1];
+        }
+        size--;
 
-    for(i = 0; i < size; i++){
+        for(i = 0; i < size; i++){
         printf("%d\n",a[i]);
     }
+    }
+
 }
