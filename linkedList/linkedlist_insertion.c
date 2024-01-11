@@ -11,9 +11,8 @@ struct node * creating_linkedlist(){
 
     struct node *head, *new_node, *temp; 
     int choice;
-
+    head = 0;
     while(choice){
-        head = 0;
         new_node = (struct node *)malloc(sizeof(struct node)); // ->This allocates memory for a new node and assigns the address of that memory to the new_node pointer.
         
         printf("Enter data");
@@ -23,7 +22,7 @@ struct node * creating_linkedlist(){
             head = temp = new_node;
         }
         else{
-            head->next = new_node;
+            temp->next = new_node;
             temp = new_node; // Update temp to the new node
         }
         printf("Do you want to continue, If yes Type -> 0 : Else Type -> 1");

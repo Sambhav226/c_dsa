@@ -21,10 +21,10 @@ int main(){
                                                 The * indicates that these are pointers
                                                 */
 
-    int choice;
-
-    while(choice){
-        head = 0;
+    int choice = 0;
+    head = 0;
+    while(choice == 0){
+ 
         new_node = (struct node *)malloc(sizeof(struct node)); // ->This allocates memory for a new node and assigns the address of that memory to the new_node pointer.
         
         printf("Enter data");
@@ -34,10 +34,10 @@ int main(){
             head = temp = new_node;
         }
         else{
-            head->next = new_node;
+            temp->next = new_node;
             temp = new_node;
         }
-        printf("Do you want to continue, If yes Type -> 0 : Else Type -> 1");
+        printf("Do you want to continue, If yes Type -> 0 : Else Type -> 1:- ");
         scanf("%d", &choice);
     }
     temp = head;
