@@ -11,7 +11,7 @@ void push1(int data){
         printf("Queue is emty");
     }
     else{
-        top 1++;
+        top1++;
         S1[top1] = data;
     }
 }
@@ -30,8 +30,8 @@ int pop1(){
     return S1[top1--];
 }
 
-int pop(){
-    return s2[top2--];
+int pop2(){
+    return S2[top2--];
 }
 
 void enqueue(int x){
@@ -65,4 +65,19 @@ void display(){
     for(i=0; i<top1; i++){
         printf("%d",S1[i]);
     }
+}
+
+int main() {
+    // Example usage of the queue operations
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+
+    display();
+
+    dequeue();
+    
+    display();
+
+    return 0;
 }
